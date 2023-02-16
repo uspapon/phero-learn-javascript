@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+</head>
+<body>
+    <h1>Please add your Comment</h1>
+    <div id="display-comment">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam debitis corrupti rerum quis. Molestiae praesentium iure perferendis dicta optio ad! Libero non quia odio. Laudantium, odio natus. Quia suscipit nesciunt ullam ipsa labore quae aperiam corporis, atque cum necessitatibus laboriosam eos corrupti aliquam quo nisi id reprehenderit quibusdam voluptatum eius?</p>
+
+        <p>Error hic, magnam placeat aspernatur laborum repellendus laudantium quaerat consequuntur, ipsum iste officiis necessitatibus nesciunt fugiat sequi adipisci ex ullam itaque nam natus. Voluptatibus cumque voluptate dolorum, repellat quae deleniti. Error adipisci inventore odio magni voluptas debitis totam! Repudiandae quos sit nihil animi quisquam, quibusdam vero pariatur eum reprehenderit sint.</p>
+
+        <p>Error corporis excepturi, porro ipsa dolor molestias eum nobis id rem officiis facilis corrupti pariatur harum sed dicta voluptates, velit repellat eos nulla necessitatibus minus. Debitis, inventore. Vel perspiciatis aliquam, ipsum unde at doloribus hic nemo vitae ex. Eius saepe sint mollitia blanditiis earum dolorum fugiat distinctio doloribus quibusdam reiciendis?</p>
+
+    </div>
+
+    <div>
+        <textarea name="visitorsComment" id="visitorsComment" cols="60" rows="5"></textarea> <br>
+        <button id="post-comment">Post</button>
+    </div>
+
+    <script>
+        // step-1: add event listener to the post button
+        document.getElementById('post-comment').addEventListener('click', function(){
+
+            // step-2: get the comment inside the text area; 
+                const commentBox = document.getElementById('visitorsComment');
+                const newComment = commentBox.value;
+            // step-3: set the comment inside the comment display container
+            // 1. get the comment container
+            // 2. create the new element
+            // 3. set the text
+            // 4. add the p tag using appendVChild
+                const commentDisplayContainer = document.getElementById('display-comment');
+                const p = document.createElement('p');
+                p.innerText = newComment;
+                commentDisplayContainer.appendChild(p);
+            // step-4: clear the text area
+                commentBox.value = "";
+
+                
+
+               
+
+        })
+
+
+    </script>
+</body>
+</html>

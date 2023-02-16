@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Summery</title>
+</head>
+<body>
+    <h1>Final DOM Event Summery</h1>
+    <p id="input-text-display">Default Text</p>
+    <input type="text" name="userName" id="userName">
+    <button id="updateBtn">Update</button>
+
+
+    <h3 id="handler-status">Default Text</h3>
+    <button onclick="handleOnClick()">Handle event by onclick function</button>
+    <button id="event-listener">Handle event by addEventListener function</button>
+
+    <script>
+        function handleOnClick(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = "handled by function attached on onclick attribute";
+        }
+
+
+        // option 2
+        document.getElementById('event-listener').addEventListener('click', function(){
+
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = "Updated by EventListener function"
+        })
+
+        // option 2 recap
+
+        document.getElementById('updateBtn').addEventListener('click', function(){
+            const userName = document.getElementById('userName');
+            const textOnHand = userName.value;
+
+            const textToappendInParagraph = document.getElementById('input-text-display');
+            textToappendInParagraph.innerText = textOnHand;
+
+            userName.value = "";
+
+        })
+        
+
+        
+        
+
+    </script>
+</body>
+</html>

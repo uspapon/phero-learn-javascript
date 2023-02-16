@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="section-header" class="some-class red bed sad mad bad">Understanding DOM</h1>
+    </header>
+    <main id="main-container" class="section-main">
+        <h2 id="main-heading">Main heading will go here</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, tempore.</p>
+
+        <ul id="visitor-destination">
+            <li class="place-list">list item 1</li>
+            <li class="place-list">list item 2</li>
+            <li class="place-list">list item 3</li>
+            <li class="place-list">list item 4</li>
+        </ul>
+        <section>
+            <h1>My awesome DOM 1</h1>
+            <ul>
+                <li>ListItem</li>
+                <li>ListItem</li>
+                <li>ListItem</li>
+                <li>ListItem</li>
+            </ul>
+        </section>
+        <section id="food-container">
+            <h1>Dishes to cook</h1>
+            <ul>
+                <li>Mutton Rezala</li>
+                <li>Beef Mezbani</li>
+                <li>Chicken Rost</li>
+                <li>Desert</li>
+            </ul>
+        </section>
+        <section id="places-to-visit" class="bold-text">
+            <h1>Places I like to visit</h1>
+            <ul id="places-list">
+                <li>shundorbon</li>
+                <li>bandorbon</li>
+                <li>shalbon</li>
+                <li>katabon</li>
+            </ul>
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+    <script>
+
+        const foodContainer = document.getElementById('food-container');
+        foodContainer.childNodes; 
+        console.log(foodContainer.childNodes); // 0: text 1: h1 2: text 3: ul 4: text
+
+        foodContainer.childNodes[3].childNodes;
+        console.log(foodContainer.childNodes[3].childNodes); // [text, li, text, li, text, li, text, li, text]
+
+        foodContainer.childNodes[3].childNodes[5].nextSibling;
+        console.log(foodContainer.childNodes[3].childNodes[5].nextSibling); // #text
+
+        const foodsUL = document.querySelector('#food-container ul'); 
+        console.log(foodsUL); // ul
+
+        // creating new element and appending into the parent
+        const newLI = document.createElement('li');
+        newLI.innerText = "Aloo bokhora Chatni";
+        // appending newly created li to the parent i.e. ul
+        foodsUL.appendChild(newLI);
+
+        // creating another new element and appending into the parent
+        const newLI2 = document.createElement('li');
+        newLI2.innerText = "Jorda";
+        foodsUL.appendChild(newLI2);
+
+
+        // finding parent node of some targeted element
+        foodsUL.parentNode;
+        foodsUL.parentNode.parentNode;
+        foodsUL.parentNode.parentNode.parentNode;
+
+
+
+    </script>
+    
+    
+    <script src="dom.js"></script>
+    <script src="append.js"></script>
+    <script src="styleInjs.js"></script>
+</body>
+</html>
